@@ -216,10 +216,10 @@
             </objects>
             <point key="canvasLocation" x="-103.125" y="1058.450704225352"/>
         </scene>
-        <!--View Controller-->
+        <!--Login View Controller-->
         <scene sceneID="5Vx-1a-8rw">
             <objects>
-                <viewController id="aev-hv-oIC" sceneMemberID="viewController">
+                <viewController id="aev-hv-oIC" customClass="LoginViewController" customModule="DNApp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="8A6-v7-6Zi"/>
                         <viewControllerLayoutGuide type="bottom" id="pMP-O0-1zN"/>
@@ -249,7 +249,7 @@
                                 <rect key="frame" x="20" y="144" width="280" height="280"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Designer News" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sta-6Q-Byp">
-                                        <rect key="frame" x="70" y="56" width="142" height="28"/>
+                                        <rect key="frame" x="69.5" y="55.5" width="141.5" height="27.5"/>
                                         <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="20"/>
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
@@ -287,7 +287,7 @@
                                         </userDefinedRuntimeAttributes>
                                     </textField>
                                     <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="icon-mail" translatesAutoresizingMaskIntoConstraints="NO" id="Hf2-GK-rCc">
-                                        <rect key="frame" x="30" y="121" width="26" height="18"/>
+                                        <rect key="frame" x="29" y="121" width="26" height="18"/>
                                     </imageView>
                                     <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="icon-password" translatesAutoresizingMaskIntoConstraints="NO" id="L0r-As-xd2">
                                         <rect key="frame" x="30" y="171" width="25" height="25"/>
@@ -307,9 +307,12 @@
                                                 <real key="value" value="3"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="loginButtonDidTouch:" destination="aev-hv-oIC" eventType="touchUpInside" id="TN2-8i-3rJ"/>
+                                        </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Log in to" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yLi-bK-zzd">
-                                        <rect key="frame" x="100" y="25" width="80" height="28"/>
+                                        <rect key="frame" x="100" y="25" width="80" height="27.5"/>
                                         <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="20"/>
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
@@ -317,7 +320,7 @@
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstItem="TYX-ff-CnL" firstAttribute="leading" secondItem="Hf2-GK-rCc" secondAttribute="trailing" constant="-41" id="8NJ-gU-gih"/>
+                                    <constraint firstItem="TYX-ff-CnL" firstAttribute="leading" secondItem="Hf2-GK-rCc" secondAttribute="trailing" constant="-40" id="8NJ-gU-gih"/>
                                     <constraint firstItem="6jS-He-nL8" firstAttribute="top" secondItem="OUa-zV-fel" secondAttribute="bottom" constant="15" id="Bht-FQ-wHa"/>
                                     <constraint firstItem="sta-6Q-Byp" firstAttribute="centerX" secondItem="yLi-bK-zzd" secondAttribute="centerX" id="Icp-2Q-o1E"/>
                                     <constraint firstItem="sta-6Q-Byp" firstAttribute="top" secondItem="yLi-bK-zzd" secondAttribute="top" constant="31" id="JsX-Jh-AxT"/>
@@ -349,6 +352,7 @@
                                 <variation key="default">
                                     <mask key="constraints">
                                         <exclude reference="JsX-Jh-AxT"/>
+                                        <exclude reference="mkV-io-XWt"/>
                                     </mask>
                                 </variation>
                             </view>
@@ -357,6 +361,7 @@
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="z6U-gP-V0u" secondAttribute="trailing" id="4Zf-5d-P8O"/>
                             <constraint firstAttribute="trailing" secondItem="z6U-gP-V0u" secondAttribute="trailing" id="88S-OU-XVh"/>
+                            <constraint firstAttribute="trailing" secondItem="z6U-gP-V0u" secondAttribute="trailing" id="AzG-LF-wfM"/>
                             <constraint firstItem="zMD-S0-s1Q" firstAttribute="leading" secondItem="4L4-sd-tbc" secondAttribute="leading" id="B8v-mm-nkl"/>
                             <constraint firstAttribute="trailing" secondItem="zMD-S0-s1Q" secondAttribute="trailing" id="FLN-1K-VkB"/>
                             <constraint firstItem="z6U-gP-V0u" firstAttribute="leading" secondItem="4L4-sd-tbc" secondAttribute="leading" id="NJB-YT-oN0"/>
@@ -364,14 +369,32 @@
                             <constraint firstItem="zMD-S0-s1Q" firstAttribute="top" secondItem="4L4-sd-tbc" secondAttribute="top" id="Tuk-dw-mtg"/>
                             <constraint firstItem="z6U-gP-V0u" firstAttribute="top" secondItem="4L4-sd-tbc" secondAttribute="top" id="Wii-yl-BUO"/>
                             <constraint firstItem="pMP-O0-1zN" firstAttribute="top" secondItem="z6U-gP-V0u" secondAttribute="bottom" id="Znc-Fa-xzI"/>
+                            <constraint firstItem="pMP-O0-1zN" firstAttribute="top" secondItem="z6U-gP-V0u" secondAttribute="bottom" id="bNl-Te-LsF"/>
                             <constraint firstItem="z6U-gP-V0u" firstAttribute="top" secondItem="4L4-sd-tbc" secondAttribute="top" id="bu3-w6-cS3"/>
                             <constraint firstItem="pMP-O0-1zN" firstAttribute="top" secondItem="z6U-gP-V0u" secondAttribute="bottom" id="daC-hl-aA3"/>
+                            <constraint firstItem="z6U-gP-V0u" firstAttribute="leading" secondItem="4L4-sd-tbc" secondAttribute="leading" id="jcG-8o-leT"/>
                             <constraint firstItem="pMP-O0-1zN" firstAttribute="top" secondItem="zMD-S0-s1Q" secondAttribute="bottom" id="qIE-R2-ugf"/>
                             <constraint firstItem="Fiz-RG-MnP" firstAttribute="centerY" secondItem="4L4-sd-tbc" secondAttribute="centerY" id="vh8-sZ-PsZ"/>
                             <constraint firstItem="z6U-gP-V0u" firstAttribute="leading" secondItem="4L4-sd-tbc" secondAttribute="leading" id="xcR-1R-nK9"/>
+                            <constraint firstItem="z6U-gP-V0u" firstAttribute="top" secondItem="4L4-sd-tbc" secondAttribute="top" id="zxN-SJ-SJr"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="4Zf-5d-P8O"/>
+                                <exclude reference="88S-OU-XVh"/>
+                                <exclude reference="NJB-YT-oN0"/>
+                                <exclude reference="Wii-yl-BUO"/>
+                                <exclude reference="bu3-w6-cS3"/>
+                                <exclude reference="xcR-1R-nK9"/>
+                                <exclude reference="Znc-Fa-xzI"/>
+                                <exclude reference="daC-hl-aA3"/>
+                            </mask>
+                        </variation>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="dialogView" destination="Fiz-RG-MnP" id="xwk-7O-6ni"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aod-es-f9T" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="5Sr-9E-H15" userLabel="Exit" sceneMemberID="exit"/>
