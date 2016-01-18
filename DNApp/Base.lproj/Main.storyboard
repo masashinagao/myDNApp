@@ -13,24 +13,134 @@
             <string>AvenirNext-Regular</string>
             <string>AvenirNext-Regular</string>
             <string>AvenirNext-Regular</string>
+            <string>AvenirNext-Regular</string>
+            <string>AvenirNext-Regular</string>
+            <string>AvenirNext-Regular</string>
+            <string>AvenirNext-Regular</string>
         </mutableArray>
     </customFonts>
     <scenes>
         <!--Top Stories-->
         <scene sceneID="ivI-tU-Ext">
             <objects>
-                <tableViewController id="GOz-89-0fO" sceneMemberID="viewController">
+                <tableViewController id="GOz-89-0fO" customClass="StoriesTableViewController" customModule="DNApp" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="6cl-Jm-nhb">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="Tf8-iw-xEP">
-                                <rect key="frame" x="0.0" y="92" width="320" height="44"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="StoryCell" rowHeight="100" id="Tf8-iw-xEP">
+                                <rect key="frame" x="0.0" y="92" width="320" height="100"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Tf8-iw-xEP" id="PbZ-Ct-t4u">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="99.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Qxi-I3-CdG">
+                                            <rect key="frame" x="10" y="8" width="20" height="20"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="20" id="g5I-AN-uLP"/>
+                                                <constraint firstAttribute="width" constant="20" id="iuB-ns-eOm"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cp2-0H-SQq">
+                                            <rect key="frame" x="35" y="8" width="240" height="25"/>
+                                            <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="18"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Hsl-7z-492">
+                                            <rect key="frame" x="35" y="40" width="10" height="10"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="10" id="VZd-uL-Yee"/>
+                                                <constraint firstAttribute="height" constant="10" id="tSO-vC-WA6"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Author" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="opH-kh-CnJ">
+                                            <rect key="frame" x="50" y="36" width="260" height="18"/>
+                                            <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="13"/>
+                                            <color key="textColor" red="0.58431372549019611" green="0.65098039215686276" blue="0.70980392156862748" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M1d-h3-cOY">
+                                            <rect key="frame" x="25" y="54" width="70" height="33"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="70" id="Ohh-LD-LPr"/>
+                                                <constraint firstAttribute="height" constant="33" id="S1z-pE-zJt"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="15"/>
+                                            <inset key="contentEdgeInsets" minX="10" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                            <inset key="titleEdgeInsets" minX="5" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                            <state key="normal" title="813" image="icon-upvote">
+                                                <color key="titleColor" red="0.58431372549019611" green="0.65098039215686276" blue="0.70980392156862748" alpha="1" colorSpace="calibratedRGB"/>
+                                            </state>
+                                        </button>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gXQ-3t-daj">
+                                            <rect key="frame" x="95" y="54" width="70" height="33"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="70" id="NPE-tj-EFL"/>
+                                                <constraint firstAttribute="height" constant="33" id="jFW-UY-Zqe"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="15"/>
+                                            <inset key="contentEdgeInsets" minX="10" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                            <inset key="titleEdgeInsets" minX="5" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                            <state key="normal" title="813" image="icon-comment">
+                                                <color key="titleColor" red="0.58431372550000005" green="0.65098039220000004" blue="0.70980392160000005" alpha="1" colorSpace="calibratedRGB"/>
+                                            </state>
+                                        </button>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="7h" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i0y-QS-ypG">
+                                            <rect key="frame" x="294" y="8" width="17.5" height="20.5"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="10" id="GgM-4a-wlT"/>
+                                                <constraint firstAttribute="height" constant="10" id="vru-iF-7Ym"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="15"/>
+                                            <color key="textColor" red="0.58823529411764708" green="0.65098039215686276" blue="0.70980392156862748" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                            <variation key="default">
+                                                <mask key="constraints">
+                                                    <exclude reference="GgM-4a-wlT"/>
+                                                    <exclude reference="vru-iF-7Ym"/>
+                                                </mask>
+                                            </variation>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="cp2-0H-SQq" firstAttribute="top" secondItem="PbZ-Ct-t4u" secondAttribute="top" constant="8" id="8FC-mB-1Aq"/>
+                                        <constraint firstItem="gXQ-3t-daj" firstAttribute="leading" secondItem="M1d-h3-cOY" secondAttribute="trailing" id="Faq-1B-73i"/>
+                                        <constraint firstItem="Hsl-7z-492" firstAttribute="top" secondItem="cp2-0H-SQq" secondAttribute="bottom" constant="7" id="Fnd-cI-w7M"/>
+                                        <constraint firstItem="gXQ-3t-daj" firstAttribute="leading" secondItem="M1d-h3-cOY" secondAttribute="trailing" id="IDO-fV-t6L"/>
+                                        <constraint firstItem="i0y-QS-ypG" firstAttribute="leading" secondItem="opH-kh-CnJ" secondAttribute="trailing" constant="10" id="KpH-xm-M33"/>
+                                        <constraint firstItem="cp2-0H-SQq" firstAttribute="leading" secondItem="Qxi-I3-CdG" secondAttribute="trailing" constant="5" id="OYY-c4-X07"/>
+                                        <constraint firstItem="gXQ-3t-daj" firstAttribute="top" secondItem="cp2-0H-SQq" secondAttribute="bottom" id="ObQ-j1-Gof"/>
+                                        <constraint firstItem="i0y-QS-ypG" firstAttribute="leading" secondItem="opH-kh-CnJ" secondAttribute="trailing" constant="10" id="OcH-As-w3R"/>
+                                        <constraint firstItem="Qxi-I3-CdG" firstAttribute="leading" secondItem="PbZ-Ct-t4u" secondAttribute="leading" constant="10" id="PTI-Ac-19m"/>
+                                        <constraint firstItem="i0y-QS-ypG" firstAttribute="top" secondItem="PbZ-Ct-t4u" secondAttribute="top" constant="8" id="Sqg-U2-Oi7"/>
+                                        <constraint firstAttribute="bottom" secondItem="M1d-h3-cOY" secondAttribute="bottom" constant="12" id="St0-QN-p9d"/>
+                                        <constraint firstAttribute="trailing" secondItem="cp2-0H-SQq" secondAttribute="trailing" constant="45" id="Vws-kr-RRQ"/>
+                                        <constraint firstAttribute="trailing" secondItem="i0y-QS-ypG" secondAttribute="trailing" constant="8" id="Wpy-EK-2I0"/>
+                                        <constraint firstAttribute="trailing" secondItem="opH-kh-CnJ" secondAttribute="trailing" constant="10" id="cLD-nU-nNT"/>
+                                        <constraint firstItem="opH-kh-CnJ" firstAttribute="leading" secondItem="Hsl-7z-492" secondAttribute="trailing" constant="5" id="enZ-Go-BcA"/>
+                                        <constraint firstItem="Qxi-I3-CdG" firstAttribute="top" secondItem="PbZ-Ct-t4u" secondAttribute="top" constant="8" id="gtM-6v-NZi"/>
+                                        <constraint firstItem="gXQ-3t-daj" firstAttribute="top" secondItem="opH-kh-CnJ" secondAttribute="bottom" id="l8h-q5-C85"/>
+                                        <constraint firstItem="opH-kh-CnJ" firstAttribute="top" secondItem="cp2-0H-SQq" secondAttribute="bottom" constant="3" id="mx5-id-Zqq"/>
+                                        <constraint firstItem="opH-kh-CnJ" firstAttribute="top" secondItem="cp2-0H-SQq" secondAttribute="bottom" constant="3" id="tl9-NY-wrv"/>
+                                        <constraint firstItem="M1d-h3-cOY" firstAttribute="leading" secondItem="PbZ-Ct-t4u" secondAttribute="leading" constant="25" id="tpI-4k-dPV"/>
+                                        <constraint firstItem="i0y-QS-ypG" firstAttribute="leading" secondItem="opH-kh-CnJ" secondAttribute="trailing" constant="10" id="wOM-ug-7B1"/>
+                                        <constraint firstItem="Hsl-7z-492" firstAttribute="leading" secondItem="cp2-0H-SQq" secondAttribute="leading" id="wwL-92-XIi"/>
+                                        <constraint firstItem="opH-kh-CnJ" firstAttribute="leading" secondItem="Hsl-7z-492" secondAttribute="trailing" constant="5" id="zLk-9k-kwA"/>
+                                    </constraints>
+                                    <variation key="default">
+                                        <mask key="constraints">
+                                            <exclude reference="tl9-NY-wrv"/>
+                                            <exclude reference="zLk-9k-kwA"/>
+                                            <exclude reference="Faq-1B-73i"/>
+                                            <exclude reference="ObQ-j1-Gof"/>
+                                            <exclude reference="KpH-xm-M33"/>
+                                            <exclude reference="OcH-As-w3R"/>
+                                            <exclude reference="wOM-ug-7B1"/>
+                                        </mask>
+                                    </variation>
                                 </tableViewCellContentView>
                             </tableViewCell>
                         </prototypes>
@@ -40,8 +150,16 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Top Stories" id="tqQ-bo-UT3">
-                        <barButtonItem key="leftBarButtonItem" image="icon-hamburger" id="0t1-BP-hGJ"/>
-                        <barButtonItem key="rightBarButtonItem" title="Login" id="qKz-de-LbZ"/>
+                        <barButtonItem key="leftBarButtonItem" image="icon-hamburger" id="0t1-BP-hGJ">
+                            <connections>
+                                <action selector="menuButtonDidTouch:" destination="GOz-89-0fO" id="gD4-oH-35a"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Login" id="qKz-de-LbZ">
+                            <connections>
+                                <action selector="loginButtonDidTouch:" destination="GOz-89-0fO" id="7Ac-sI-WxH"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
@@ -669,6 +787,23 @@
             </objects>
             <point key="canvasLocation" x="-573" y="274"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="EJe-70-qiH">
+            <objects>
+                <viewController id="orq-Zd-5B7" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="lms-tg-xF6"/>
+                        <viewControllerLayoutGuide type="bottom" id="Aet-5B-Fqy"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="cnu-2V-gGK">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LJW-W0-CnC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
     </scenes>
     <resources>
         <image name="2-Comments" width="320" height="1161"/>
@@ -681,11 +816,13 @@
         <image name="big-top" width="41" height="39"/>
         <image name="icon-book" width="125" height="122"/>
         <image name="icon-close" width="19" height="19"/>
+        <image name="icon-comment" width="17" height="15"/>
         <image name="icon-hamburger" width="22" height="16"/>
         <image name="icon-mail" width="26" height="18"/>
         <image name="icon-password" width="25" height="25"/>
         <image name="icon-sketch" width="64" height="61"/>
         <image name="icon-twitter" width="18" height="14"/>
+        <image name="icon-upvote" width="18" height="16"/>
         <image name="icon-xcode" width="64" height="59"/>
         <image name="input-outline" width="7" height="44"/>
     </resources>

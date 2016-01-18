@@ -38,12 +38,12 @@
 		969AB13B1B37A362000A62F8 /* UnwindSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 969AB11E1B37A362000A62F8 /* UnwindSegue.swift */; };
 		96B71EBE1A7505D300545869 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B71EBD1A7505D300545869 /* AppDelegate.swift */; };
 		96B71EC11A7505D300545869 /* DNApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 96B71EBF1A7505D300545869 /* DNApp.xcdatamodeld */; };
-		96B71EC31A7505D300545869 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B71EC21A7505D300545869 /* ViewController.swift */; };
 		96B71EC61A7505D300545869 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 96B71EC41A7505D300545869 /* Main.storyboard */; };
 		96B71EC81A7505D300545869 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 96B71EC71A7505D300545869 /* Images.xcassets */; };
 		96B71ECB1A7505D300545869 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 96B71EC91A7505D300545869 /* LaunchScreen.xib */; };
 		96B71ED71A7505D300545869 /* DNAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B71ED61A7505D300545869 /* DNAppTests.swift */; };
 		B2388DEF1C27CC420062548C /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2388DEE1C27CC420062548C /* LoginViewController.swift */; };
+		B24103C71C4CB9FD0023F92E /* StoriesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B24103C61C4CB9FD0023F92E /* StoriesTableViewController.swift */; };
 		B24C452F1C37B1A3005ECC6B /* LearnViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B24C452E1C37B1A3005ECC6B /* LearnViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -92,7 +92,6 @@
 		96B71EBC1A7505D300545869 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		96B71EBD1A7505D300545869 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		96B71EC01A7505D300545869 /* DNApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DNApp.xcdatamodel; sourceTree = "<group>"; };
-		96B71EC21A7505D300545869 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		96B71EC51A7505D300545869 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		96B71EC71A7505D300545869 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		96B71ECA1A7505D300545869 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -100,6 +99,7 @@
 		96B71ED51A7505D300545869 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		96B71ED61A7505D300545869 /* DNAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DNAppTests.swift; sourceTree = "<group>"; };
 		B2388DEE1C27CC420062548C /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		B24103C61C4CB9FD0023F92E /* StoriesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoriesTableViewController.swift; sourceTree = "<group>"; };
 		B24C452E1C37B1A3005ECC6B /* LearnViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LearnViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -181,7 +181,7 @@
 			children = (
 				969AB1001B37A362000A62F8 /* Spring */,
 				96B71EBD1A7505D300545869 /* AppDelegate.swift */,
-				96B71EC21A7505D300545869 /* ViewController.swift */,
+				B24103C61C4CB9FD0023F92E /* StoriesTableViewController.swift */,
 				B2388DEE1C27CC420062548C /* LoginViewController.swift */,
 				B24C452E1C37B1A3005ECC6B /* LearnViewController.swift */,
 				96B71EC41A7505D300545869 /* Main.storyboard */,
@@ -332,7 +332,6 @@
 				969AB12D1B37A362000A62F8 /* LoadingView.swift in Sources */,
 				969AB1361B37A362000A62F8 /* SpringTextField.swift in Sources */,
 				969AB1311B37A362000A62F8 /* Spring.swift in Sources */,
-				96B71EC31A7505D300545869 /* ViewController.swift in Sources */,
 				969AB1301B37A362000A62F8 /* SoundPlayer.swift in Sources */,
 				969AB1291B37A362000A62F8 /* DesignableView.swift in Sources */,
 				B2388DEF1C27CC420062548C /* LoginViewController.swift in Sources */,
@@ -344,6 +343,7 @@
 				969AB1391B37A362000A62F8 /* TransitionManager.swift in Sources */,
 				969AB1351B37A362000A62F8 /* SpringLabel.swift in Sources */,
 				969AB11F1B37A362000A62F8 /* AsyncButton.swift in Sources */,
+				B24103C71C4CB9FD0023F92E /* StoriesTableViewController.swift in Sources */,
 				969AB1201B37A362000A62F8 /* AsyncImageView.swift in Sources */,
 				969AB1281B37A362000A62F8 /* DesignableTextView.swift in Sources */,
 				969AB1381B37A362000A62F8 /* SpringView.swift in Sources */,
