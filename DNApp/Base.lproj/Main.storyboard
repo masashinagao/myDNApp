@@ -34,7 +34,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="StoryCell" rowHeight="100" id="Tf8-iw-xEP">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="StoryCell" rowHeight="100" id="Tf8-iw-xEP" customClass="StoryTableViewCell" customModule="DNApp" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="92" width="320" height="100"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Tf8-iw-xEP" id="PbZ-Ct-t4u">
@@ -79,6 +79,9 @@
                                             <state key="normal" title="813" image="icon-upvote">
                                                 <color key="titleColor" red="0.58431372549019611" green="0.65098039215686276" blue="0.70980392156862748" alpha="1" colorSpace="calibratedRGB"/>
                                             </state>
+                                            <connections>
+                                                <action selector="upvoteButtonDidTouch:" destination="Tf8-iw-xEP" eventType="touchUpInside" id="Mm3-68-Tm9"/>
+                                            </connections>
                                         </button>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gXQ-3t-daj" customClass="SpringButton" customModule="DNApp" customModuleProvider="target">
                                             <rect key="frame" x="95" y="54" width="70" height="33"/>
@@ -92,9 +95,12 @@
                                             <state key="normal" title="244" image="icon-comment">
                                                 <color key="titleColor" red="0.58431372550000005" green="0.65098039220000004" blue="0.70980392160000005" alpha="1" colorSpace="calibratedRGB"/>
                                             </state>
+                                            <connections>
+                                                <action selector="commentButtonDidTouch:" destination="Tf8-iw-xEP" eventType="touchUpInside" id="rg7-jp-3Bn"/>
+                                            </connections>
                                         </button>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="7h" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i0y-QS-ypG">
-                                            <rect key="frame" x="295" y="8" width="17" height="21"/>
+                                            <rect key="frame" x="294" y="8" width="18" height="21"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="10" id="GgM-4a-wlT"/>
                                                 <constraint firstAttribute="height" constant="10" id="vru-iF-7Ym"/>
@@ -131,6 +137,15 @@
                                     </constraints>
                                 </tableViewCellContentView>
                                 <inset key="separatorInset" minX="35" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                <connections>
+                                    <outlet property="authorLabel" destination="opH-kh-CnJ" id="i3R-19-0DD"/>
+                                    <outlet property="avatarImageView" destination="Hsl-7z-492" id="3z7-7O-90x"/>
+                                    <outlet property="badgeImageView" destination="Qxi-I3-CdG" id="3jQ-tu-ntU"/>
+                                    <outlet property="commentButton" destination="gXQ-3t-daj" id="CJb-4M-dO2"/>
+                                    <outlet property="timeLabel" destination="i0y-QS-ypG" id="2pw-69-s2K"/>
+                                    <outlet property="titleLabel" destination="cp2-0H-SQq" id="GuC-pU-Sxq"/>
+                                    <outlet property="upvoteButton" destination="M1d-h3-cOY" id="bde-yS-AOf"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
