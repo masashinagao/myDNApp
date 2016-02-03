@@ -40,5 +40,25 @@ class StoryTableViewCell: UITableViewCell {
         delegate?.storyTableViewCellDidTouchComment(self, sender: sender)
     }
     
+    func configureWithStory(story: AnyObject) {
+        
+        let title = story["title"] as! String
+        let badge = story["badge"]as! String
+        let userPortraitUrl = story["user_portrait_url"] as! String
+        let userDisplayName = story["user_display_name"] as! String
+        let userJob = story["user_job"] as! String
+        let createdAt = story["created_at"] as! String
+        let voteCount = story["vote_count"] as! Int
+        let commentCount = story["comment_count"] as! Int
+        
+        titleLabel.text = title
+        badgeImageView.image = UIImage(named: "badge-" + badge)
+        avatarImageView.image = UIImage(named: "content-avatar-default")
+        authorLabel.text = userDisplayName + ", " + userJob
+        timeLabel.text = timeAgoSinceDate(dateFromString(createdAt, format: "yyyy-MM-dd'T'HH:mm:ssZ"), numericDates: true)
+        upvoteButton.setTitle(String(voteCount), forState: UIControlState.Normal)
+        commentButton.setTitle(String(commentCount), forState: UIControlState.Normal)
+        
+    }
 
 }

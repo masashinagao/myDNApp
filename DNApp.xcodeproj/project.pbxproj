@@ -47,6 +47,7 @@
 		B2388DEF1C27CC420062548C /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2388DEE1C27CC420062548C /* LoginViewController.swift */; };
 		B24103C71C4CB9FD0023F92E /* StoriesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B24103C61C4CB9FD0023F92E /* StoriesTableViewController.swift */; };
 		B24C452F1C37B1A3005ECC6B /* LearnViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B24C452E1C37B1A3005ECC6B /* LearnViewController.swift */; };
+		B254D9081C60C18600B8A8AF /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = B254D9071C60C18500B8A8AF /* Data.swift */; };
 		B263AEE21C55B10100BE0D4E /* StoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B263AEE11C55B10100BE0D4E /* StoryTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
@@ -106,6 +107,7 @@
 		B2388DEE1C27CC420062548C /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		B24103C61C4CB9FD0023F92E /* StoriesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoriesTableViewController.swift; sourceTree = "<group>"; };
 		B24C452E1C37B1A3005ECC6B /* LearnViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LearnViewController.swift; sourceTree = "<group>"; };
+		B254D9071C60C18500B8A8AF /* Data.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
 		B263AEE11C55B10100BE0D4E /* StoryTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoryTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -189,6 +191,7 @@
 				96B71EBD1A7505D300545869 /* AppDelegate.swift */,
 				B24103C61C4CB9FD0023F92E /* StoriesTableViewController.swift */,
 				B263AEE11C55B10100BE0D4E /* StoryTableViewCell.swift */,
+				B254D9071C60C18500B8A8AF /* Data.swift */,
 				B2388DEE1C27CC420062548C /* LoginViewController.swift */,
 				B22268651C4E461900386FEF /* MenuViewController.swift */,
 				B22268671C4E4BA600386FEF /* WebViewController.swift */,
@@ -337,6 +340,7 @@
 				B22268661C4E461900386FEF /* MenuViewController.swift in Sources */,
 				969AB12F1B37A362000A62F8 /* Misc.swift in Sources */,
 				B24C452F1C37B1A3005ECC6B /* LearnViewController.swift in Sources */,
+				B254D9081C60C18600B8A8AF /* Data.swift in Sources */,
 				969AB1221B37A362000A62F8 /* BlurView.swift in Sources */,
 				969AB13B1B37A362000A62F8 /* UnwindSegue.swift in Sources */,
 				969AB12D1B37A362000A62F8 /* LoadingView.swift in Sources */,
