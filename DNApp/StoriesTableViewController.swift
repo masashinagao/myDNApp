@@ -60,4 +60,14 @@ class StoriesTableViewController: UITableViewController, StoryTableViewCellDeleg
         performSegueWithIdentifier("CommentsSegue", sender: cell)
     }
     
+    // MARK: Misc
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "CommentsSegue" {
+            let toView = segue.destinationViewController as! CommentsTableViewController
+            let indexPath = tableView.indexPathForCell(sender as! UITableViewCell)!
+            let story = data[indexPath.row]
+            toView.story = story
+        }
+    }
+    
 }

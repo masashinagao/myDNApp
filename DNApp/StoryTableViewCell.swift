@@ -22,6 +22,7 @@ class StoryTableViewCell: UITableViewCell {
     @IBOutlet weak var authorLabel: UILabel!
     @IBOutlet weak var upvoteButton: SpringButton!
     @IBOutlet weak var commentButton: SpringButton!
+    @IBOutlet weak var commentTextView: AutoTextView!
     weak var delegate: StoryTableViewCellDelegate?
 
     @IBAction func upvoteButtonDidTouch(sender: AnyObject) {
@@ -41,7 +42,6 @@ class StoryTableViewCell: UITableViewCell {
     }
     
     func configureWithStory(story: AnyObject) {
-        
         let title = story["title"] as! String
         let badge = story["badge"]as! String
         let userPortraitUrl = story["user_portrait_url"] as! String
@@ -50,6 +50,7 @@ class StoryTableViewCell: UITableViewCell {
         let createdAt = story["created_at"] as! String
         let voteCount = story["vote_count"] as! Int
         let commentCount = story["comment_count"] as! Int
+        let comment = story["comment"] as! String
         
         titleLabel.text = title
         badgeImageView.image = UIImage(named: "badge-" + badge)
@@ -59,6 +60,9 @@ class StoryTableViewCell: UITableViewCell {
         upvoteButton.setTitle(String(voteCount), forState: UIControlState.Normal)
         commentButton.setTitle(String(commentCount), forState: UIControlState.Normal)
         
+        if let commentTextView = commentTextView {
+            commentTextView.text = comment
+        }
     }
 
 }
