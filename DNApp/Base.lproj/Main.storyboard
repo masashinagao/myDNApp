@@ -49,7 +49,7 @@
                                 <rect key="frame" x="0.0" y="92" width="320" height="100"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Tf8-iw-xEP" id="PbZ-Ct-t4u">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="99.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="100"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Qxi-I3-CdG">
@@ -180,7 +180,7 @@
                     <connections>
                         <segue destination="aev-hv-oIC" kind="presentation" identifier="LoginSegue" modalPresentationStyle="overCurrentContext" modalTransitionStyle="crossDissolve" id="hyZ-ZB-Qiw"/>
                         <segue destination="LAb-dg-WqN" kind="presentation" identifier="MenuSegue" modalPresentationStyle="overCurrentContext" modalTransitionStyle="crossDissolve" id="e2R-Sa-Frw"/>
-                        <segue destination="wXN-jd-aFz" kind="presentation" identifier="WebSegue" modalPresentationStyle="overCurrentContext" id="S6Q-22-MgO"/>
+                        <segue destination="wXN-jd-aFz" kind="presentation" identifier="WebSegue" id="S6Q-22-MgO"/>
                         <segue destination="4pT-jc-Ova" kind="show" identifier="CommentsSegue" id="2UU-7m-qHv"/>
                     </connections>
                 </tableViewController>
@@ -201,7 +201,7 @@
                                 <rect key="frame" x="0.0" y="92" width="320" height="140"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="iNT-dS-Or8" id="oSG-p1-nrw">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="139.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="140"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="rk5-kb-fhN">
@@ -324,7 +324,7 @@
                                 <rect key="frame" x="0.0" y="232" width="320" height="119"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="hG6-GX-SP6" id="tto-rp-FTu">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="118.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="119"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="jcQ-Jb-WX5">
@@ -373,7 +373,7 @@
                                             </connections>
                                         </button>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="7h" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kkr-Rs-hbA">
-                                            <rect key="frame" x="294" y="8" width="17.5" height="20.5"/>
+                                            <rect key="frame" x="294" y="8" width="18" height="21"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="10" id="0yJ-mD-SIb"/>
                                                 <constraint firstAttribute="width" constant="10" id="YZc-4N-B76"/>
@@ -563,6 +563,9 @@
                                         <state key="normal" title="@MengTo" image="icon-twitter">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="twitterButtonDidTouch:" destination="s6i-mT-cSt" eventType="touchUpInside" id="IM4-pP-xl9"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.19607843137254902" green="0.23529411764705882" blue="0.28235294117647058" alpha="1" colorSpace="calibratedRGB"/>
@@ -669,11 +672,16 @@
                                     <userDefinedRuntimeAttribute type="string" keyPath="animation" value="slideUp"/>
                                 </userDefinedRuntimeAttributes>
                             </button>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progressViewStyle="bar" progress="0.10000000000000001" translatesAutoresizingMaskIntoConstraints="NO" id="c6b-Aw-G96">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="3"/>
+                                <color key="progressTintColor" red="0.21568627450980393" green="0.72941176470588232" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
+                            </progressView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="4tn-Ic-Tnq" firstAttribute="top" secondItem="OF9-fO-XEM" secondAttribute="top" id="0fO-s0-dPb"/>
                             <constraint firstItem="ID0-am-G6T" firstAttribute="centerY" secondItem="yHG-dD-mVb" secondAttribute="centerY" id="2wl-PP-5F0"/>
+                            <constraint firstAttribute="trailing" secondItem="c6b-Aw-G96" secondAttribute="trailing" id="7up-Jd-xIH"/>
                             <constraint firstItem="Evm-BY-HyH" firstAttribute="top" secondItem="4tn-Ic-Tnq" secondAttribute="bottom" id="8XV-nF-Tny"/>
                             <constraint firstItem="ID0-am-G6T" firstAttribute="leading" secondItem="OF9-fO-XEM" secondAttribute="leading" constant="20" id="DYE-25-myq"/>
                             <constraint firstItem="4tn-Ic-Tnq" firstAttribute="leading" secondItem="OF9-fO-XEM" secondAttribute="leading" id="HLc-tf-lGv"/>
@@ -683,7 +691,9 @@
                             <constraint firstItem="Evm-BY-HyH" firstAttribute="top" secondItem="ID0-am-G6T" secondAttribute="bottom" constant="20" id="Xn3-Lf-wcb"/>
                             <constraint firstItem="yHG-dD-mVb" firstAttribute="centerY" secondItem="ID0-am-G6T" secondAttribute="centerY" id="Zrp-qc-MgV"/>
                             <constraint firstItem="ID0-am-G6T" firstAttribute="leading" secondItem="OF9-fO-XEM" secondAttribute="leading" constant="20" id="bTS-JE-Fre"/>
+                            <constraint firstItem="c6b-Aw-G96" firstAttribute="leading" secondItem="OF9-fO-XEM" secondAttribute="leading" id="dr1-c1-Zol"/>
                             <constraint firstAttribute="trailing" secondItem="4tn-Ic-Tnq" secondAttribute="trailing" id="kBb-fL-A9f"/>
+                            <constraint firstItem="c6b-Aw-G96" firstAttribute="top" secondItem="OF9-fO-XEM" secondAttribute="top" id="lrV-IC-c34"/>
                             <constraint firstItem="yHG-dD-mVb" firstAttribute="height" secondItem="ID0-am-G6T" secondAttribute="height" id="s2t-ez-gVJ"/>
                             <constraint firstItem="yHG-dD-mVb" firstAttribute="leading" secondItem="ID0-am-G6T" secondAttribute="trailing" constant="20" id="vdb-zZ-O4v"/>
                             <constraint firstItem="ID0-am-G6T" firstAttribute="width" secondItem="yHG-dD-mVb" secondAttribute="width" id="y2s-GE-w5H"/>
@@ -698,6 +708,10 @@
                             </mask>
                         </variation>
                     </view>
+                    <connections>
+                        <outlet property="progressView" destination="c6b-Aw-G96" id="zBE-ph-I0P"/>
+                        <outlet property="webView" destination="4tn-Ic-Tnq" id="V2e-Y0-9x0"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Wmm-8h-h0d" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
