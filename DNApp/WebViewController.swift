@@ -24,7 +24,7 @@ class WebViewController: UIViewController, UIWebViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //url = "https://designcode.io/"
+
         let targetURL = NSURL(string: url)
         let request = NSURLRequest(URL: targetURL!)
         webView.loadRequest(request)
