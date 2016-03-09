@@ -16,10 +16,10 @@ class CommentsTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        comments = story["comments"]
-        
         tableView.estimatedRowHeight = 140
         tableView.rowHeight = UITableViewAutomaticDimension
+        
+        comments = story["comments"]
     }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

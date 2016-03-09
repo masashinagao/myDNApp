@@ -8,9 +8,15 @@
 
 import UIKit
 
+protocol MenuViewControllerDelegate: class {
+    func menuViewControllerDidTouchTop(controller: MenuViewController)
+    func menuViewControllerDidTouchRecent(controller: MenuViewController)
+}
+
 class MenuViewController: UIViewController {
 
     @IBOutlet weak var dialogView: DesignableView!
+    weak var delegate: MenuViewControllerDelegate?
     
     @IBAction func closeButtonDidTouch(sender: AnyObject) {
         dismissViewControllerAnimated(true, completion: nil)
@@ -18,4 +24,15 @@ class MenuViewController: UIViewController {
         dialogView.animate()
     }
     
+    @IBAction func topButtonDidTouch(sender: AnyObject) {
+        delegate?.menuViewControllerDidTouchTop(self)
+        closeButtonDidTouch(sender)
+    }
+    
+    @IBAction func recentButtonDidTouch(sender: AnyObject) {
+        delegate?.menuViewControllerDidTouchRecent(self)
+        closeButtonDidTouch(sender)
+    }
+    @IBAction func loginButtonDidTouch(sender: AnyObject) {
+    }
 }
