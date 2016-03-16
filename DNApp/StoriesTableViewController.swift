@@ -99,8 +99,6 @@ class StoriesTableViewController: UITableViewController, StoryTableViewCellDeleg
             }
             LocalStore.saveUpvotedStory(storyId)
             cell.configureWithStory(story)
-            cell.upvoteButton.setImage(UIImage(named: "icon-upvote-active"), forState: UIControlState.Normal)
-            cell.upvoteButton.setTitle(String(story["vote_count"].int! + 1), forState: UIControlState.Normal)
         } else {
             performSegueWithIdentifier("LoginSegue", sender: self)
         }
