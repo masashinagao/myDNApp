@@ -8,12 +8,13 @@
 
 import UIKit
 
-class StoriesTableViewController: UITableViewController, StoryTableViewCellDelegate, MenuViewControllerDelegate {
+class StoriesTableViewController: UITableViewController, StoryTableViewCellDelegate, MenuViewControllerDelegate, LoginViewControllerDelegate {
 
     let transitionManager = TransitionManager()
     var stories: JSON! = []
     var isFirstTime = true
     var section = ""
+    @IBOutlet weak var loginButton: UIBarButtonItem!
     
     func refreshStories() {
         loadStories(section, page: 1)
@@ -25,6 +26,13 @@ class StoriesTableViewController: UITableViewController, StoryTableViewCellDeleg
             self.tableView.reloadData()
             self.view.hideLoading()
             self.refreshControl?.endRefreshing()
+        }
+        if LocalStore.getToken() == nil {
+            loginButton.title = "Login"
+            loginButton.enabled = true
+        } else {
+            loginButton.title = ""
+            loginButton.enabled = false
         }
     }
     
@@ -82,7 +90,20 @@ class StoriesTableViewController: UITableViewController, StoryTableViewCellDeleg
     // MARK: StoryTableViewCellDelegate
     
     func storyTableViewCellDidTouchUpvote(cell: StoryTableViewCell, sender: AnyObject) {
-        // TODO: Implement Upvote
+        if let token = LocalStore.getToken() {
+            let indexPath = tableView.indexPathForCell(cell)!
+            let story = stories[indexPath.row]
+            let storyId = story["id"].int!
+            DNService.upvoteStoryWithId(storyId, token: token) { (successful) -> () in
+                // Do something
+            }
+            LocalStore.saveUpvotedStory(storyId)
+            cell.configureWithStory(story)
+            cell.upvoteButton.setImage(UIImage(named: "icon-upvote-active"), forState: UIControlState.Normal)
+            cell.upvoteButton.setTitle(String(story["vote_count"].int! + 1), forState: UIControlState.Normal)
+        } else {
+            performSegueWithIdentifier("LoginSegue", sender: self)
+        }
     }
     
     func storyTableViewCellDidTouchComment(cell: StoryTableViewCell, sender: AnyObject) {
@@ -103,6 +124,11 @@ class StoriesTableViewController: UITableViewController, StoryTableViewCellDeleg
         loadStories("recent", page: 1)
         navigationItem.title = "Recent Stories"
         section = "recent"
+    }
+    
+    func menuViewControllerDidTouchLogout(controller: MenuViewController) {
+        view.showLoading()
+        loadStories(section, page: 1)
     }
     
     
@@ -129,6 +155,16 @@ class StoriesTableViewController: UITableViewController, StoryTableViewCellDeleg
             let toView = segue.destinationViewController as! MenuViewController
             toView.delegate = self
         }
+        if segue.identifier == "LoginSegue" {
+            let toView = segue.destinationViewController as! LoginViewController
+            toView.delegate = self
+        }
     }
     
+    // MARK: LoginViewControllerDelegate
+    
+    func loginViewControllerDidLogin(controller: LoginViewController) {
+        loadStories(section, page: 1)
+        view.showLoading()
+    }
 }

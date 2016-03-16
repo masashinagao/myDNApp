@@ -27,6 +27,7 @@
 		B2764A671C818A9D0034CD88 /* TPKeyboardAvoidingScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = B2764A611C818A9D0034CD88 /* TPKeyboardAvoidingScrollView.m */; };
 		B2764A681C818A9D0034CD88 /* TPKeyboardAvoidingTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = B2764A631C818A9D0034CD88 /* TPKeyboardAvoidingTableView.m */; };
 		B2764A691C818A9D0034CD88 /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = B2764A651C818A9D0034CD88 /* UIScrollView+TPKeyboardAvoidingAdditions.m */; };
+		B277AAC91C98123E00AB0BFD /* LocalStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = B277AAC81C98123E00AB0BFD /* LocalStore.swift */; };
 		B280B4731C740E66002969F8 /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = B280B4721C740E66002969F8 /* SwiftyJSON.swift */; };
 		B280B4751C741C2A002969F8 /* CommentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B280B4741C741C2A002969F8 /* CommentTableViewCell.swift */; };
 		B2C1B91E1C69DA1C000FAE73 /* AsyncButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2C1B9001C69DA1C000FAE73 /* AsyncButton.swift */; };
@@ -169,6 +170,7 @@
 		B2764A631C818A9D0034CD88 /* TPKeyboardAvoidingTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPKeyboardAvoidingTableView.m; sourceTree = "<group>"; };
 		B2764A641C818A9D0034CD88 /* UIScrollView+TPKeyboardAvoidingAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+TPKeyboardAvoidingAdditions.h"; sourceTree = "<group>"; };
 		B2764A651C818A9D0034CD88 /* UIScrollView+TPKeyboardAvoidingAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+TPKeyboardAvoidingAdditions.m"; sourceTree = "<group>"; };
+		B277AAC81C98123E00AB0BFD /* LocalStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalStore.swift; sourceTree = "<group>"; };
 		B280B4721C740E66002969F8 /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
 		B280B4741C741C2A002969F8 /* CommentTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentTableViewCell.swift; sourceTree = "<group>"; };
 		B2C1B9001C69DA1C000FAE73 /* AsyncButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AsyncButton.swift; sourceTree = "<group>"; };
@@ -253,6 +255,7 @@
 				B280B4741C741C2A002969F8 /* CommentTableViewCell.swift */,
 				B24103C61C4CB9FD0023F92E /* StoriesTableViewController.swift */,
 				B280B4721C740E66002969F8 /* SwiftyJSON.swift */,
+				B277AAC81C98123E00AB0BFD /* LocalStore.swift */,
 				B263AEE11C55B10100BE0D4E /* StoryTableViewCell.swift */,
 				B254D9071C60C18500B8A8AF /* Data.swift */,
 				B2388DEE1C27CC420062548C /* LoginViewController.swift */,
@@ -545,6 +548,7 @@
 				B2C1B92E1C69DA1C000FAE73 /* Misc.swift in Sources */,
 				B2C1B91F1C69DA1C000FAE73 /* AsyncImageView.swift in Sources */,
 				B2C1B9251C69DA1C000FAE73 /* DesignableTabBarController.swift in Sources */,
+				B277AAC91C98123E00AB0BFD /* LocalStore.swift in Sources */,
 				B2C1B9201C69DA1C000FAE73 /* AutoTextView.swift in Sources */,
 				B2C1B93A1C69DA1C000FAE73 /* UnwindSegue.swift in Sources */,
 				B2C1B9371C69DA1C000FAE73 /* SpringView.swift in Sources */,

@@ -49,7 +49,7 @@
                                 <rect key="frame" x="0.0" y="92" width="320" height="100"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Tf8-iw-xEP" id="PbZ-Ct-t4u">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="100"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="99.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Qxi-I3-CdG">
@@ -181,6 +181,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </refreshControl>
                     <connections>
+                        <outlet property="loginButton" destination="qKz-de-LbZ" id="iLC-TH-GdZ"/>
                         <segue destination="aev-hv-oIC" kind="presentation" identifier="LoginSegue" modalPresentationStyle="overCurrentContext" modalTransitionStyle="crossDissolve" id="hyZ-ZB-Qiw"/>
                         <segue destination="LAb-dg-WqN" kind="presentation" identifier="MenuSegue" modalPresentationStyle="overCurrentContext" modalTransitionStyle="crossDissolve" id="e2R-Sa-Frw"/>
                         <segue destination="wXN-jd-aFz" kind="presentation" identifier="WebSegue" id="S6Q-22-MgO"/>
@@ -204,7 +205,7 @@
                                 <rect key="frame" x="0.0" y="92" width="320" height="140"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="iNT-dS-Or8" id="oSG-p1-nrw">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="140"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="139.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="rk5-kb-fhN">
@@ -327,7 +328,7 @@
                                 <rect key="frame" x="0.0" y="232" width="320" height="119"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="hG6-GX-SP6" id="tto-rp-FTu">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="119"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="118.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="jcQ-Jb-WX5" customClass="AsyncImageView" customModule="DNApp" customModuleProvider="target">
@@ -442,6 +443,7 @@
                     </tableView>
                     <connections>
                         <segue destination="nh9-6d-NsC" kind="presentation" identifier="ReplySegue" id="cI0-cB-bTa"/>
+                        <segue destination="aev-hv-oIC" kind="presentation" identifier="LoginSegue" modalPresentationStyle="overCurrentContext" modalTransitionStyle="crossDissolve" id="A8h-cq-Bua"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0bY-4t-aai" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -989,8 +991,8 @@
                                             <action selector="loginButtonDidTouch:" destination="LAb-dg-WqN" eventType="touchUpInside" id="VHc-no-ssZ"/>
                                         </connections>
                                     </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Login " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eey-bh-R4g">
-                                        <rect key="frame" x="187" y="233" width="46" height="22"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Login" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eey-bh-R4g">
+                                        <rect key="frame" x="168" y="233" width="84" height="22"/>
                                         <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="16"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -1018,6 +1020,8 @@
                     </view>
                     <connections>
                         <outlet property="dialogView" destination="cWt-HT-aXO" id="kX4-Ii-duH"/>
+                        <outlet property="loginLabel" destination="eey-bh-R4g" id="MIU-aP-YBs"/>
+                        <segue destination="aev-hv-oIC" kind="presentation" identifier="LoginSegue" id="Pwt-mC-5ix"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CnF-5J-vbM" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1071,4 +1075,7 @@
         <image name="icon-xcode" width="64" height="59"/>
         <image name="input-outline" width="7" height="44"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="A8h-cq-Bua"/>
+    </inferredMetricsTieBreakers>
 </document>

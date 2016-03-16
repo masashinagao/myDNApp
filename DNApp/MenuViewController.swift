@@ -11,12 +11,24 @@ import UIKit
 protocol MenuViewControllerDelegate: class {
     func menuViewControllerDidTouchTop(controller: MenuViewController)
     func menuViewControllerDidTouchRecent(controller: MenuViewController)
+    func menuViewControllerDidTouchLogout(controller: MenuViewController)
 }
 
 class MenuViewController: UIViewController {
 
     @IBOutlet weak var dialogView: DesignableView!
     weak var delegate: MenuViewControllerDelegate?
+    @IBOutlet weak var loginLabel: UILabel!
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        if LocalStore.getToken() == nil {
+            loginLabel.text = "Login"
+        } else {
+            loginLabel.text = "Logout"
+        }
+    }
     
     @IBAction func closeButtonDidTouch(sender: AnyObject) {
         dismissViewControllerAnimated(true, completion: nil)
@@ -34,5 +46,12 @@ class MenuViewController: UIViewController {
         closeButtonDidTouch(sender)
     }
     @IBAction func loginButtonDidTouch(sender: AnyObject) {
+        if LocalStore.getToken() == nil {
+            performSegueWithIdentifier("LoginSegue", sender: self)
+        } else {
+            LocalStore.deleteToken()
+            self.closeButtonDidTouch(self)
+            delegate?.menuViewControllerDidTouchLogout(self)
+        }
     }
 }

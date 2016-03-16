@@ -50,4 +50,40 @@ struct DNService {
         }
     }
     
+    static func loginWithEmail(email: String, password: String, handler: (token: String?) -> ()) {
+        let urlString = baseURL + ResourcePath.Login.description
+        let parameters = [
+            "grant_type": "password",
+            "username": email,
+            "password": password,
+            "client_id": clientID,
+            "client_secret": clientSecret
+        ]
+        Alamofire.request(.POST, urlString, parameters: parameters).responseJSON { response in
+            let json = JSON(response.result.value!)
+            let token = json["access_token"].string
+            handler(token: token)
+        }
+    }
+    
+    static func upvoteStoryWithId(storyId: Int, token: String, response: (successful: Bool) -> ()) {
+        let urlString = baseURL + ResourcePath.StoryUpvote(storyId: storyId).description
+        upvoteWithUrlString(urlString, token: token, handler: response)
+    }
+    
+    static func upvoteCommentWithId(commentId: Int, token: String, response: (successful: Bool) -> ()) {
+        let urlString = baseURL + ResourcePath.CommentUpvote(commentId: commentId).description
+        upvoteWithUrlString(urlString, token: token, handler: response)
+    }
+    
+    private static func upvoteWithUrlString(urlString: String, token: String, handler: (successful: Bool) -> ()) {
+        let request = NSMutableURLRequest(URL: NSURL(string: urlString)!)
+        request.HTTPMethod = "POST"
+        request.setValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
+        
+        Alamofire.request(request).responseJSON { response in
+            let successful = response.response?.statusCode == 200
+            handler(successful: successful)
+        }
+    }
 }
