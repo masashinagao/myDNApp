@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CommentsTableViewController: UITableViewController, CommentTableViewCellDelegate, StoryTableViewCellDelegate {
+class CommentsTableViewController: UITableViewController, CommentTableViewCellDelegate, StoryTableViewCellDelegate, ReplyViewControllerDelegate {
     
     var story: JSON!
     var comments: JSON!
@@ -20,6 +20,7 @@ class CommentsTableViewController: UITableViewController, CommentTableViewCellDe
         tableView.rowHeight = UITableViewAutomaticDimension
         
         comments = story["comments"]
+        
     }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -64,7 +65,11 @@ class CommentsTableViewController: UITableViewController, CommentTableViewCellDe
     }
     
     func commentTableViewCellDidTouchComment(cell: CommentTableViewCell) {
-        
+        if LocalStore.getToken() == nil {
+            performSegueWithIdentifier("LoginSegue", sender: self)
+        } else {
+            performSegueWithIdentifier("ReplySegue", sender: cell)
+        }
     }
     
     // MARK: StoryTableViewCellDelegate
@@ -85,6 +90,34 @@ class CommentsTableViewController: UITableViewController, CommentTableViewCellDe
     }
     
     func storyTableViewCellDidTouchComment(cell: StoryTableViewCell, sender: AnyObject) {
-        
+        if LocalStore.getToken() == nil {
+            performSegueWithIdentifier("LoginSegue", sender: self)
+        } else {
+            performSegueWithIdentifier("ReplySegue", sender: cell)
+        }
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "ReplySegue" {
+            let toView = segue.destinationViewController as! ReplyViewController
+            if let cell = sender as? CommentTableViewCell {
+                let indexPath = tableView.indexPathForCell(cell)!
+                let comment = comments[indexPath.row - 1]
+                toView.comment = comment
+            }
+            
+            if let cell = sender as? StoryTableViewCell {
+                toView.story = story
+            }
+            
+            toView.delegate = self
+            
+        }
+    }
+    
+    // MARK: ReplyViewControllerDelegate
+    
+    func replyViewControllerDidSend(controller: ReplyViewController) {
+        // Do next
     }
 }

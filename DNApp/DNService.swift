@@ -50,6 +50,18 @@ struct DNService {
         }
     }
     
+    
+    static func storyForId(storyId: Int, handler: (JSON) -> ()) {
+        let urlString = baseURL + ResourcePath.StoryId(storyId: storyId).description
+        let parameters = [
+            "client_id": clientID
+        ]
+        Alamofire.request(.GET, urlString, parameters: parameters).responseJSON { response in
+            let story = JSON(response.data ?? [])
+            handler(story)
+        }
+    }
+    
     static func loginWithEmail(email: String, password: String, handler: (token: String?) -> ()) {
         let urlString = baseURL + ResourcePath.Login.description
         let parameters = [
@@ -84,6 +96,32 @@ struct DNService {
         Alamofire.request(request).responseJSON { response in
             let successful = response.response?.statusCode == 200
             handler(successful: successful)
+        }
+    }
+    
+    static func replyStoryWithId(storyId: Int, token: String, body: String, response: (successful: Bool) -> ()) {
+        let urlString = baseURL + ResourcePath.StoryReply(storyId: storyId).description
+        replyWithUrlString(urlString, token: token, body: body, handler: response)
+    }
+    
+    static func replyCommentWithId(commentId: Int, token: String, body: String, response: (successful: Bool) -> ()) {
+        let urlString = baseURL + ResourcePath.CommentReply(commentId: commentId).description
+        replyWithUrlString(urlString, token: token, body: body, handler: response)
+    }
+    
+    private static func replyWithUrlString(urlString: String, token: String, body: String, handler: (successful: Bool) -> ()) {
+        let request = NSMutableURLRequest(URL: NSURL(string: urlString)!)
+        request.HTTPMethod = "POST"
+        request.setValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
+        request.HTTPBody = "comment[body]=\(body)".dataUsingEncoding(NSUTF8StringEncoding)
+        
+        Alamofire.request(request).responseJSON { response in
+            let json = JSON(response.result.value!)
+            if json["comment"].string != nil {
+                handler(successful: true)
+            } else {
+                handler(successful: false)
+            }
         }
     }
 }
