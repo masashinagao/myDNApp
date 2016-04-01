@@ -19,6 +19,8 @@
 		B2388DEF1C27CC420062548C /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2388DEE1C27CC420062548C /* LoginViewController.swift */; };
 		B24103C71C4CB9FD0023F92E /* StoriesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B24103C61C4CB9FD0023F92E /* StoriesTableViewController.swift */; };
 		B247689B1CAD2B51004B5CF6 /* ReplyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B247689A1CAD2B51004B5CF6 /* ReplyViewController.swift */; };
+		B249CE051CAE930100A62537 /* refresh.wav in Resources */ = {isa = PBXBuildFile; fileRef = B249CE031CAE930100A62537 /* refresh.wav */; };
+		B249CE061CAE930100A62537 /* upvote.wav in Resources */ = {isa = PBXBuildFile; fileRef = B249CE041CAE930100A62537 /* upvote.wav */; };
 		B24C452F1C37B1A3005ECC6B /* LearnViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B24C452E1C37B1A3005ECC6B /* LearnViewController.swift */; };
 		B254D9081C60C18600B8A8AF /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = B254D9071C60C18500B8A8AF /* Data.swift */; };
 		B256A1211C8E97C000F756E5 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B256A1141C8E97B200F756E5 /* Alamofire.framework */; };
@@ -160,6 +162,8 @@
 		B2388DEE1C27CC420062548C /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		B24103C61C4CB9FD0023F92E /* StoriesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoriesTableViewController.swift; sourceTree = "<group>"; };
 		B247689A1CAD2B51004B5CF6 /* ReplyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReplyViewController.swift; sourceTree = "<group>"; };
+		B249CE031CAE930100A62537 /* refresh.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = refresh.wav; sourceTree = "<group>"; };
+		B249CE041CAE930100A62537 /* upvote.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = upvote.wav; sourceTree = "<group>"; };
 		B24C452E1C37B1A3005ECC6B /* LearnViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LearnViewController.swift; sourceTree = "<group>"; };
 		B254D9071C60C18500B8A8AF /* Data.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
 		B256A1091C8E97B200F756E5 /* Alamofire.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Alamofire.xcodeproj; path = "Alamofire-master/Alamofire.xcodeproj"; sourceTree = "<group>"; };
@@ -249,6 +253,7 @@
 		96B71EBA1A7505D300545869 /* DNApp */ = {
 			isa = PBXGroup;
 			children = (
+				B249CE021CAE930100A62537 /* Sounds */,
 				B2C1B8FF1C69DA1C000FAE73 /* Spring */,
 				B2764A5D1C818A9D0034CD88 /* TPKeyboardAvoiding */,
 				96B71EBD1A7505D300545869 /* AppDelegate.swift */,
@@ -297,6 +302,15 @@
 				96B71ED51A7505D300545869 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		B249CE021CAE930100A62537 /* Sounds */ = {
+			isa = PBXGroup;
+			children = (
+				B249CE031CAE930100A62537 /* refresh.wav */,
+				B249CE041CAE930100A62537 /* upvote.wav */,
+			);
+			path = Sounds;
 			sourceTree = "<group>";
 		};
 		B256A10A1C8E97B200F756E5 /* Products */ = {
@@ -510,6 +524,8 @@
 				96B71EC61A7505D300545869 /* Main.storyboard in Resources */,
 				96B71ECB1A7505D300545869 /* LaunchScreen.xib in Resources */,
 				96B71EC81A7505D300545869 /* Images.xcassets in Resources */,
+				B249CE051CAE930100A62537 /* refresh.wav in Resources */,
+				B249CE061CAE930100A62537 /* upvote.wav in Resources */,
 				B2C1B92D1C69DA1C000FAE73 /* LoadingView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

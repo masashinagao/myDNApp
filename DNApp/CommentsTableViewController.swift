@@ -13,6 +13,8 @@ class CommentsTableViewController: UITableViewController, CommentTableViewCellDe
     var story: JSON!
     var comments: [JSON]!
     
+    var transitionManager = TransitionManager()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -23,6 +25,15 @@ class CommentsTableViewController: UITableViewController, CommentTableViewCellDe
         
         refreshControl?.addTarget(self, action: #selector(reloadStory), forControlEvents: UIControlEvents.ValueChanged)
         
+    }
+    
+    @IBAction func shareButtonDidTouch(sender: AnyObject) {
+        let title = story["title"].string ?? ""
+        let url = story["url"].string ?? ""
+        let activityViewController = UIActivityViewController(activityItems: [title, url], applicationActivities: nil)
+        activityViewController.setValue(title, forKey: "subject")
+        activityViewController.excludedActivityTypes = [UIActivityTypeAirDrop]
+        presentViewController(activityViewController, animated: true, completion: nil)
     }
     
     func reloadStory() {
@@ -126,6 +137,7 @@ class CommentsTableViewController: UITableViewController, CommentTableViewCellDe
             
             toView.delegate = self
             
+            toView.transitioningDelegate = transitionManager
         }
     }
     

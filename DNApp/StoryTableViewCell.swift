@@ -31,6 +31,8 @@ class StoryTableViewCell: UITableViewCell {
         upvoteButton.animate()
         
         delegate?.storyTableViewCellDidTouchUpvote(self, sender: sender)
+        
+        SoundPlayer.play("upvote.wav")
     }
     
     @IBAction func commentButtonDidTouch(sender: AnyObject) {
