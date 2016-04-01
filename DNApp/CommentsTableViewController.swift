@@ -11,7 +11,7 @@ import UIKit
 class CommentsTableViewController: UITableViewController, CommentTableViewCellDelegate, StoryTableViewCellDelegate, ReplyViewControllerDelegate {
     
     var story: JSON!
-    var comments: JSON!
+    var comments: [JSON]!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,8 +19,22 @@ class CommentsTableViewController: UITableViewController, CommentTableViewCellDe
         tableView.estimatedRowHeight = 140
         tableView.rowHeight = UITableViewAutomaticDimension
         
-        comments = story["comments"]
+        comments = flattenComments(story["comments"].array ?? [])
         
+        refreshControl?.addTarget(self, action: #selector(reloadStory), forControlEvents: UIControlEvents.ValueChanged)
+        
+    }
+    
+    func reloadStory() {
+        view.showLoading()
+        DNService.storyForId(story["id"].int!, handler: { (JSON) -> () in
+            print(JSON)
+            self.view.hideLoading()
+            self.story = JSON["story"]
+            self.comments = self.flattenComments(JSON["story"]["comments"].array ?? [])
+            self.tableView.reloadData()
+            self.refreshControl?.endRefreshing()
+        })
     }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -118,6 +132,20 @@ class CommentsTableViewController: UITableViewController, CommentTableViewCellDe
     // MARK: ReplyViewControllerDelegate
     
     func replyViewControllerDidSend(controller: ReplyViewController) {
-        // Do next
+        reloadStory()
+    }
+    
+    // Helper
+    
+    func flattenComments(comments: [JSON]) -> [JSON] {
+        let flattenedComments = comments.map(commentsForComment).reduce([], combine: +)
+        return flattenedComments
+    }
+    
+    func commentsForComment(comment: JSON) -> [JSON] {
+        let comments = comment["comments"].array ?? []
+        return comments.reduce([comment]) { acc, x in
+            acc + self.commentsForComment(x)
+        }
     }
 }

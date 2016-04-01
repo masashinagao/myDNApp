@@ -57,7 +57,7 @@ struct DNService {
             "client_id": clientID
         ]
         Alamofire.request(.GET, urlString, parameters: parameters).responseJSON { response in
-            let story = JSON(response.data ?? [])
+            let story = JSON(response.result.value ?? [])
             handler(story)
         }
     }
